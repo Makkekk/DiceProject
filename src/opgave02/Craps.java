@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Random;
+
 
 
 public class Craps {
@@ -24,9 +24,8 @@ public class Craps {
     }
 
     public static void playCraps() {  //Metoden/Reglerne til at starte spillet
-        Random random = new Random();
-        int die1 = rollDie(random); //Kast første terning.
-        int die2 = rollDie(random); //Kast anden terning.
+        int die1 = rollDie(); //første terning.
+        int die2 = rollDie(); //anden terning.
         int sum = die1 + die2; // Beregn summen
 
         System.out.println("Summen af kastet " + sum);
@@ -39,7 +38,7 @@ public class Craps {
         } else {
             System.out.println("Points " + sum);
 
-            boolean resultat  = rollforPoint(sum, random);
+            boolean resultat  = rollforPoint(sum);
             if (resultat) {
                 System.out.println("Du vandt!");
             } else {
@@ -50,14 +49,15 @@ public class Craps {
 
     }
 
-    //Metode til at kaste terninger indtil point eller 7 bliver kastet
-    public static boolean rollforPoint(int point, Random random) {
+    //Metode til at kaste terninger
+    public static boolean rollforPoint(int point) {
         int sum = 0;
 
-        //Kast terningen indtil pointet rammes eller 7
+        //indtil pointet rammes eller 7
         while (sum != 7 && sum != point) {
-            int die1 = rollDie(random);
-            int die2 = rollDie(random);
+            int rollDie;
+            int die1 = rollDie();
+            int die2 = rollDie();
             sum = die1 + die2;
             System.out.println("Du kastede " + sum);
         }
@@ -65,8 +65,9 @@ public class Craps {
     }
 
     //metode til få terningen kastet
-    public static int rollDie(Random random) {
-        return random.nextInt(6) + 1; //returner et tal imellem 1 og 6
+    public static int rollDie() {
+        return (int) (Math.random() * 6 + 1); //Kaster et tal på en terning 1 - 6
     }
 
 }
+

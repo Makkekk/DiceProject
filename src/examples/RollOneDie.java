@@ -41,10 +41,10 @@ public class RollOneDie {
         printStatistics();
         scanner.close();
     }
-
     private static int rollDie() {
         return (int) (Math.random() * 6 + 1);
     }
+
 
     private static void updateStatistics() {
         rollCount++;

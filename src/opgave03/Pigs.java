@@ -8,9 +8,9 @@ public class Pigs {
 
     public static void main(String[] args) {
 
-            displayRules();
-            playPig(); //START spillet
-        }
+        displayRules();
+        playPig(); //START spillet
+    }
 
 
     public static void displayRules() {
@@ -24,7 +24,7 @@ public class Pigs {
         System.out.println();
     }
 
-    public static void playPig(int rollDie) {
+    public static int playPig() {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -35,35 +35,35 @@ public class Pigs {
             System.out.println("Du rullede: " + rollDie());
 
 
-
             System.out.println();
 
-        boolean isPlayer1Turn = true;
-        int player1_Score = 0;
-        int player2_Score = 0;
+            boolean isPlayer1Turn = true;
+            int player1_Score = 0;
+            int player2_Score = 0;
 
-        while (true) {
-            if (isPlayer1Turn) {
-                System.out.println("Spiller 1's tur");
-                player1_Score = player1_Score;
-                if (player1_Score == Winning_score) {
-                    System.out.println("Spiller 1 vinder med 100 point. ");
-                    return;
-                }
-            } else {
-                System.out.println("Spiller 2's tur");
-                player2_Score = player2_Score;
-                if (player2_Score == Winning_score) {
-                    System.out.println("Spiller 2 vinder med 100 point");
-                    return;
+            while (true) {
+                if (isPlayer1Turn) {
+                    System.out.println("Spiller 1's tur");
+                    player1_Score = player1_Score;
+                    if (player1_Score == Winning_score) {
+                        System.out.println("Spiller 1 vinder med 100 point. ");
+                        return;
+                    }
+                } else {
+                    System.out.println("Spiller 2's tur");
+                    player2_Score = player2_Score;
+                    if (player2_Score == Winning_score) {
+                        System.out.println("Spiller 2 vinder med 100 point");
+                        return;
 
+                    }
                 }
             }
         }
 
-    }
-
-    public static int rollDie() {
-        return (int)(Math.random() * 6 + 1); //Retunere et tal imellem 1 og 6
+        publ ic static int rollDie;
+        return (int) (Math.random() * 6 + 1); {
+            //Retunere et tal imellem 1 og 6
+        }
     }
 }
